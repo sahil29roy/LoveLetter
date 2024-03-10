@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Greeting</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffcccc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-image: url('https://img.freepik.com/free-vector/valentine-s-glittery-heart-frame-pink-background_53876-96462.jpg?w=996');
+            background-size: cover;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff3366;
+            margin-bottom: 20px;
+        }
+
+
+        .heart-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .heart-img {
+            width: 100%;
+            height: auto;
+            animation: scaleAnimation 2s infinite;
+        }
+
+        .love-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Adjust the position precisely */
+            color: #ff3366;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .heart-img {
+            width: 150px;
+            height: auto;
+            animation: scaleAnimation 2s infinite;
+        }
+
+        @keyframes scaleAnimation {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+        <h1>Dear <%= name %>
+        </h1>
+        <% if (typeof quotes !=='undefined' && quotes) { %>
+            <p>"<%= quotes %>"</p>
+            <% } else { %>
+                <p>To the most wonderful woman I know, thank you for constantly bringing out the best in me.</p>
+                <% } %>
+                    <div class="heart-container">
+                        <img src="/heart.png" alt="Heart Image" class="heart-img">
+                        <div class="love-text">I LOVE YOU</div>
+                    </div>
+
+    </div>
+        
+    <audio autoplay loop>
+        <source src="/background-music.mp3" type="audio/mpeg">
+    </audio>
+    
+</body>
+
+</html>
